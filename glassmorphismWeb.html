@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root{
+        --fb-hover-color:rgb(55, 83, 157);
+        --ig-hover-color:linear-gradient(to bottom left, rgb(45, 59, 223)15%,
+            rgb(129, 52, 175), rgb(221, 42, 123),rgb(254, 218, 119)
+           ,rgb(245, 133, 41));
+        --tw-hover-color:rgb(79, 153, 199);
+        --card-bg-color:rgba(225,225,225,0.3);
+        --box-shadow:0 4px 38px rgba(49, 44, 44, 0.9);
+    }
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    .frame{
+        width: 100%;
+        height: 100vh;
+        overflow-y: scroll;  /*scroll to get full screen*/
+        scroll-snap-type: y mandatory; /*scroll to get full screen*/
+    }
+    .menu-bar{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .menu-bar ul{
+        padding: 20px 0;
+    }
+    .menu-bar ul li{
+        display: inline-block;
+        padding: 0 20px;
+        
+    }
+    .menu-bar li a{
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .menu-bar li a:hover{
+        opacity: 0.6;
+    }/*
+    .sub-menu{
+        visibility: hidden;
+        color: #000;
+        position: absolute;
+    }*/
+    .container{
+        background-image: url('https://images.pexels.com/photos/371578/pexels-photo-371578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-position:center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-type: y mandatory;
+        
+    }
+
+    .container,.slide-2{
+        height: 100vh;
+        width: 100%;
+        scroll-snap-align: start;
+        background-image: url('https://images.pexels.com/photos/2468773/pexels-photo-2468773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    }
+
+    
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    img:hover{
+        transform: scale(2);
+    }
+    .card{
+        width: 90%;
+        max-width: 440px;
+        color: #1f241f;
+        text-align: center;
+        padding: 50px 35px;
+        border: 3px solid rgba(225,255,255,0.3);
+        background: var(--card-bg-color);
+        border-radius: 16px;
+        box-shadow: var(--box-shadow);
+        backdrop-filter: blur(5px);
+    }
+    .card h2{
+        font-size: 40px;
+        font-weight: 600;
+        margin: 20px;
+    }
+    .card p{
+        font-size: 18px;
+        max-width: 10px auto;
+        min-width: 330px;
+    }
+    .card .links img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 20px 5px;
+        background: #000;
+        transition: background 0.5s
+    }
+    #fb:hover{
+        background: var(--fb-hover-color)
+    }
+    #ig:hover{
+        background: var(--ig-hover-color)
+    }
+    #tw:hover{
+        background: var(--tw-hover-color);
+    }
+    .btn{
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        background: #fff;
+        color: #090d21;
+        padding: 10px 30px;
+        border-radius: 30px;
+        margin: 30px 0 10px;
+        opacity: 0.7;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    span{
+        background: linear-gradient(to right, #0d0d44 25%, #b80129);
+        color: #fff;
+            height: 100%;
+            width: 0%;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        .btn:hover span{
+            width: 100%;
+        }
+        .btn:hover {
+            border: none;
+            color: #fff;
+        }
+    .leaves img{
+        width: 35px;
+        height: 35px;
+        animation: leaves 7s linear infinite;
+    }
+    .leaves{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        top: -100px; /*This gives the position where it starts*/
+
+        }
+
+    @keyframes leaves {
+        100%{
+            transform: translateY(100vh);/*tell the direction where the leaves falling from up or down*/
+            opacity: 0;
+        }
+        70%{
+            opacity: 1;
+        } 
+        50%{
+            opacity: 1;
+        }
+        0%{
+            transform: translateY(0);
+            opacity: 0;
+        }    
+    }
+
+        .leaves img:nth-child(1){
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+        }
+        .leaves img:nth-child(21){
+            animation-delay: 1s;
+        }
+        .leaves img:nth-child(3){
+            width: 15px;
+            height: 15px;
+            animation-delay: 3s;
+        }
+        .leaves img:nth-child(4){
+            animation-delay: 4.5s;
+        }
+        .leaves img:nth-child(5){
+            animation-delay: 3s;
+        }
+        .leaves img:nth-child(6){
+            width: 45px;
+            height: 45px;
+            animation-delay: 6s;
+        }
+        .leaves img:nth-child(7){
+            width: 30px;
+            height: 30px;
+            animation-delay: 7s;
+        }
+</style>
+<body>
+    <div class="frame">
+        <div class="menu-bar">
+            <ul>
+                <li class="active"><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-user"></i>About</a>
+                <!-- <div class="sub-menu">
+                        <li ><a href="#">Education</a></li>
+                        <li><a href="#">Experinces</a></li>
+                        <li><a href="#">Projects</a></li>
+                    </div>-->   
+                </li>
+                <li><a href="#"><i class="fa fa-edit"></i>Training</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+                <li><a href="#"><i class="fa fa-clone"></i>Services</a> 
+            </ul>
+        </div>
+        <div class="container">
+            <div class="card" data-tilt>
+                <img src="images/mySelf.png" alt="">
+                <h2>Mattikan Tongsai</h2>
+                <p>I'm a passionate fresh gratuate <br>from the university of Bahrain in Information Systems</p>
+                <div class="links">
+                    <a  href="#"><img id="fb" src="images/fb.png" alt=""></a>
+                    <a  href="#"><img id="ig" src="images/ig.png" alt=""></a>
+                    <a href="#"><img id="tw" src="images/tw.png" alt=""></a>
+                </div> 
+                <a href="#" class="btn"><span></span>More Details</a>
+            </div>
+            <div class="leaves">
+                <img src="images/Autumn-Leaf-PNG-Transparent-Image.png" alt="">
+                <img src="images/Autumn-Leaf-PNG-Transparent-Image.png" alt="">
+                <img src="images/Autumn-Leaf-PNG-Transparent-Image.png" alt="">
+                <img src="images/Autumn-Leaf-PNG-Transparent-Image.png" alt="">
+                <img src="images/Autumn-Leaf-PNG-Transparent-Image.png" alt="">
+                <img src="images/Autumn-Leaf-PNG-Transparent-Image.png" alt="">
+                <img src="images/Autumn-Leaf-PNG-Transparent-Image.png" alt="">
+            </div>
+                
+        </div>
+        <div class="slide-2">
+
+
+        </div>
+    </div>
+    
+    <script src="vanilla-tilt.js"></script>
+</body>
+</html>

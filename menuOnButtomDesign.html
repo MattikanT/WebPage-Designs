@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+  rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+  crossorigin="anonymous"
+/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOS Screen Design</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url('https://images.pexels.com/photos/66258/staniel-cay-swimming-pig-seagull-fish-66258.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .nav-bar{
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:15px 50px ;
+            background-color: rgba(0,0,0,0.6);
+            position: fixed;
+            bottom: 0 ;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 25px 25px 0  0;
+        }
+        ul{
+            display: flex;
+            gap: 2rem;
+
+        }
+        li:hover, img:hover{
+            transform: scale(2);
+            transition: all 0.3s ease-in-out 0.1s;
+        }
+        li{
+            list-style: none;
+            text-transform: uppercase;
+            
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            
+        }
+        img{
+            width: 35px;
+            margin: 0 7px;
+            border-radius: 50%;
+        }
+
+        #fb{
+            background: rgb(55, 83, 157);
+            
+        }
+        #ig{
+           background: linear-gradient(to bottom left, rgb(45, 59, 223)15%,
+            rgb(129, 52, 175), rgb(221, 42, 123),rgb(254, 218, 119)
+           ,rgb(245, 133, 41));
+           /*background: linear-gradient(to bottom left, rgb(45, 59, 223)15%),
+                       linear-gradient(to bottom left, rgb(129, 52, 175), rgb(221, 42, 123),rgb(254, 218, 119)
+           ,rgb(245, 133, 41));*/
+
+        }
+        #tw{
+            background: rgb(79, 153, 199);
+        }
+
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 28vh;
+            color: #fff;
+        }
+        h1{
+            font-size: 5rem;
+        }
+        h2{
+            text-align: center;
+        }
+        .button{
+            height: 61vh;
+            text-align: center;
+            top: 100px;
+
+        }
+        button{
+            background: linear-gradient(to bottom right, rgb(45, 59, 223)15%,
+            rgb(25, 155, 233), rgb(91, 151, 89),rgb(254, 218, 119)
+           ,rgb(245, 133, 41));
+            width: 120px;
+            height: 35px;
+            border-radius: 30px;
+            border: none;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+
+        @media (max-width:700px) {
+        body{
+            background-size: auto;
+            background-position-x: center;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-bar-1">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </div>
+
+       <div class="nav-bar-2">
+            <img src="images/fb.png" id="fb" alt="">
+            <img src="images/ig.png" id="ig" alt="">
+            <img src="images/tw.png" id="tw" alt="">
+       </div>
+       
+    </div>
+    <div class="main">
+        <div class="content">
+            <h1>Welcome</h1>
+            <h2>to new island</h2>
+        </div>   
+    </div>
+    <div class="button">
+            <button type="button">Sign-in</button>
+    </div>
+</body>
+</html>
